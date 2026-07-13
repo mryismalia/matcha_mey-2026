@@ -216,9 +216,9 @@ php artisan migrate --force
 echo "🚀 Running project:init..."
 php artisan project:init || true
 
-# Step 9: Create storage symbolic link
+# Step 9: Create storage symbolic link (relative path)
 echo "🔗 Creating storage link..."
-php artisan storage:link || true
+php artisan storage:link --relative --force || true
 
 # Step 10: Start cron
 echo "🕒 Starting cron service..."

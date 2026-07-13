@@ -1,15 +1,6 @@
 /** @type {import('tailwindcss').Config} */
-const colors = require("tailwindcss/colors");
-const defaultTheme = require("tailwindcss/defaultTheme");
-
-function withOpacityValue(variable) {
-    return ({ opacityValue }) => {
-        if (opacityValue === undefined) {
-            return `rgb(var(${variable}))`;
-        }
-        return `rgb(var(${variable}) / ${opacityValue})`;
-    };
-}
+import forms from '@tailwindcss/forms';
+import typography from '@tailwindcss/typography';
 
 export default {
     content: [
@@ -19,8 +10,5 @@ export default {
         "./vendor/filament/**/*.blade.php",
     ],
     darkMode: "class",
-    plugins: [
-        require("@tailwindcss/forms"),
-        require("@tailwindcss/typography"),
-    ],
+    plugins: [forms, typography],
 }
